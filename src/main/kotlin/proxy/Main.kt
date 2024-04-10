@@ -46,12 +46,6 @@ class ProxyServer {
             val cacheDir = File(
                 javaClass.classLoader.getResource("cache")?.toURI() ?: throw IOException()
             ).parentFile.toString()
-            try {
-                val cachePath = Path("$cacheDir/$filename")
-            } catch (e: InvalidPathException) {
-                continue
-            }
-
 
             try {
                 // Проверяем, есть ли файл в кэше
